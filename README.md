@@ -5,50 +5,32 @@
 <p>To ImplementA * Search algorithm for a Graph using Python 3.</p>
 <H3>Algorithm:</H3>
 
-``````
-// A* Search Algorithm
-1.  Initialize the open list
-2.  Initialize the closed list
-    put the starting node on the open 
-    list (you can leave its f at zero)
 
-3.  while the open list is not empty
-    a) find the node with the least f on 
-       the open list, call it "q"
+ ## A* Search Algorithm
 
-    b) pop q off the open list
-  
-    c) generate q's 8 successors and set their 
-       parents to q
+ 
+1.Initialize the open list
+
+2.Initialize the closed list put the starting node on the open list (you can leave its f at zero)
+
+3.While the open list is not empty
+
+   a. Find the node with the least f on the open list, call it "q"
    
-    d) for each successor
-        i) if successor is the goal, stop search
-        
-        ii) else, compute both g and h for successor
-          successor.g = q.g + distance between 
-                              successor and q
-          successor.h = distance from goal to 
-          successor (This can be done using many 
-          ways, we will discuss three heuristics- 
-          Manhattan, Diagonal and Euclidean 
-          Heuristics)
-          
-          successor.f = successor.g + successor.h
+   b. Pop q off the open list
+   
+   c. Generate q's 8 successors and set their parents to q for each successor
+   
+         i. If successor is the goal, stop search
+         ii. Else, compute both g and h for successor
+                  successor.g = q.g + distance between successor and successor.h = distance from goal to successor (This can be done using many ways, we will discuss three heuristics- Manhattan, Diagonal and Euclidean Heuristics)
+                  successor.f = successor.g + successor.h
+         iii. if a node with the same position as successor is in the OPEN list which has a lower f than successor, skip this successor
+         iv. if a node with the same position as successor is in the CLOSED list which has a lower f than successor, skip this successor otherwise, add the node to the open list end (for loop)
+   
+   d. push q on the closed list end (while loop)
 
-        iii) if a node with the same position as 
-            successor is in the OPEN list which has a 
-           lower f than successor, skip this successor
 
-        iV) if a node with the same position as 
-            successor  is in the CLOSED list which has
-            a lower f than successor, skip this successor
-            otherwise, add  the node to the open list
-     end (for loop)
-  
-    e) push q on the closed list
-    end (while loop)
-
-``````
 
 ## PROGRAM:
 ```
@@ -154,6 +136,10 @@ I 1 <br>
 J 0 <br>
 <hr>
 <h2>Sample Output</h2>
+
+<img width="1494" height="768" alt="image" src="https://github.com/user-attachments/assets/9069794b-6ee0-419e-91bd-207e82b023b4" />
+
+
 <hr>
 Path found: ['A', 'F', 'G', 'I', 'J']
 
@@ -223,5 +209,12 @@ D 1 <br>
 G 0 <br>
 <hr>
 <h2>Sample Output</h2>
+
+<img width="1436" height="492" alt="image" src="https://github.com/user-attachments/assets/8ecb95ee-1113-4b56-8dba-d986aacf9e0a" />
+
+
 <hr>
 Path found: ['A', 'E', 'D', 'G']
+
+## RESULT :
+Thus a graph was constructed and implemantation of A star Search for the same graph was done successfully.
